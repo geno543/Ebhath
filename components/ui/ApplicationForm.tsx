@@ -618,11 +618,11 @@ const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
                   name={field}
                   value={formData[field as keyof typeof formData] as string}
                   onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                 >
-                  <option value="">Select gender</option>
+                  <option value="" className="text-white bg-gray-800">Select gender</option>
                   {genderOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
+                    <option key={option} value={option} className="text-white bg-gray-800">{option}</option>
                   ))}
                 </select>
               ) : field === 'gradeLevel' ? (
@@ -631,11 +631,11 @@ const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
                   name={field}
                   value={formData[field as keyof typeof formData] as string}
                   onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                 >
-                  <option value="">Select grade level</option>
+                  <option value="" className="text-white bg-gray-800">Select grade level</option>
                   {gradeLevelOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
+                    <option key={option} value={option} className="text-white bg-gray-800">{option}</option>
                   ))}
                 </select>
               ) : field === 'firstChoice' || field === 'secondChoice' || field === 'thirdChoice' ? (
@@ -644,13 +644,13 @@ const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
                   name={field}
                   value={formData[field as keyof typeof formData] as string}
                   onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                 >
-                  <option value="">Select research area</option>
+                  <option value="" className="text-white bg-gray-800">Select research area</option>
                   {researchAreas.map(category => (
-                    <optgroup key={category.category} label={category.category}>
+                    <optgroup key={category.category} label={category.category} className="text-white bg-gray-800">
                       {category.areas.map(area => (
-                        <option key={area} value={area}>{area}</option>
+                        <option key={area} value={area} className="text-white bg-gray-800">{area}</option>
                       ))}
                     </optgroup>
                   ))}
@@ -662,7 +662,7 @@ const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
                   value={formData[field as keyof typeof formData] as string}
                   onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
                   rows={5}
-                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                   placeholder={field === 'essay' ? 'Minimum 200 words...' : ''}
                 />
               ) : (
@@ -687,7 +687,7 @@ const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
                   min={field === 'hoursPerWeek' ? 10 : undefined}
                   max={field === 'hoursPerWeek' ? 40 : undefined}
                   accept={field === 'workSample' ? '.pdf,.doc,.docx' : undefined}
-                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                 />
               )}
 
