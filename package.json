@@ -1,0 +1,40 @@
+{
+  "name": "ebhath-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@supabase/supabase-js": "^2.49.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/crypto-js": "^4.2.2",
+    "@types/pg": "^8.11.11",
+    "crypto-js": "^4.2.0",
+    "firebase": "^11.5.0",
+    "framer-motion": "^12.0.5",
+    "next": "^14.0.0",
+    "pg": "^8.14.1",
+    "react": "^18.2.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.15.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.0.0"
+  }
+}
