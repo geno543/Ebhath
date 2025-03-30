@@ -6,14 +6,14 @@ import { useSearchParams } from 'next/navigation';
 import AnimatedSection from '../../components/AnimatedSection';
 import ApplicationForm from '../../components/ui/ApplicationForm';
 
-export default function Apply() {
+export default function ApplyPage() {
   const searchParams = useSearchParams();
   const [selectedType, setSelectedType] = useState<'member' | 'mentor' | null>(null);
 
   useEffect(() => {
     const type = searchParams.get('type');
     if (type === 'member' || type === 'mentor') {
-      setSelectedType(type as 'member' | 'mentor');
+      setSelectedType(type);
     }
   }, [searchParams]);
 

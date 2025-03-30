@@ -60,6 +60,7 @@ interface FormField {
 
 interface ApplicationFormProps {
   type: 'member' | 'mentor';
+  onBack?: () => void;
 }
 
 const researchAreas = [
@@ -71,7 +72,7 @@ const researchAreas = [
   { category: 'Other Sciences', areas: ['Chemistry', 'Environmental Science', 'Social Sciences', 'Business'] }
 ];
 
-const ApplicationForm = ({ type }: ApplicationFormProps) => {
+const ApplicationForm = ({ type, onBack }: ApplicationFormProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<{
     [key: string]: any;

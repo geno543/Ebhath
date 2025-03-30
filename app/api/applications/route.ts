@@ -1,21 +1,32 @@
 import { NextResponse } from 'next/server';
 import { Pool } from 'pg';
 
-if (!process.env.DATABASE_URL) {
-  throw new Error('DATABASE_URL is not defined');
+let pool: Pool | null = null;
+
+function getPool() {
+  if (!pool && process.env.DATABASE_URL) {
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    });
+  }
+  return pool;
 }
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
 export async function POST(request: Request) {
+  const currentPool = getPool();
+  if (!currentPool) {
+    return NextResponse.json(
+      { error: 'Database configuration not available' },
+      { status: 503 }
+    );
+  }
+
   let client;
   try {
-    client = await pool.connect();
+    client = await currentPool.connect();
     const data = await request.json();
     
     // Create table if it doesn't exist
@@ -50,16 +61,12 @@ export async function POST(request: Request) {
     let errorMessage = 'An unexpected error occurred';
     if (error.code === '28P01') {
       errorMessage = 'Database authentication failed';
-    } else if (error.code === '08001') {
-      errorMessage = 'Unable to connect to the database';
-    } else if (error.code === '42P01') {
-      errorMessage = 'Database table not found';
-    } else if (error.code === '23502') {
-      errorMessage = 'Missing required fields';
+    } else if (error.code === '3D000') {
+      errorMessage = 'Database does not exist';
     }
     
     return NextResponse.json(
-      { success: false, error: errorMessage },
+      { error: errorMessage },
       { status: 500 }
     );
   } finally {

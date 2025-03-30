@@ -4,7 +4,21 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher } from 'react-icons/fa';
 
-const courses = [
+interface Course {
+  id: number;
+  title: string;
+  description: string;
+  language: string;
+  duration: string;
+  level: string;
+  students: number;
+  category: string;
+  image: string;
+  available: string;
+  rating?: number;
+}
+
+const courses: Course[] = [
   {
     id: 1,
     title: "Arabic course",
@@ -90,16 +104,16 @@ export default function Courses() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
 
-  const sortCourses = (courses: typeof courses) => {
+  const sortCourses = (coursesToSort: Course[]) => {
     switch (sortBy) {
       case "popular":
-        return [...courses].sort((a, b) => b.students - a.students);
+        return [...coursesToSort].sort((a, b) => b.students - a.students);
       case "rating":
-        return [...courses].sort((a, b) => b.rating - a.rating);
+        return [...coursesToSort].sort((a, b) => b.rating - a.rating);
       case "newest":
-        return [...courses]; // Assuming the array is already in chronological order
+        return [...coursesToSort]; // Assuming the array is already in chronological order
       default:
-        return courses;
+        return coursesToSort;
     }
   };
 
