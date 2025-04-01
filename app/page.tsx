@@ -92,7 +92,7 @@ export default function Home() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSfBSunQxaTr2M9TvHkHmf6-WnJi4516JtPK7XJQx5MFthZdiA/viewform"
                   className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold bg-blue-500 text-white hover:bg-blue-600 transition duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 group"
                 >
-                  Start Learning
+                  Join Now
                   <motion.span
                     className="ml-2"
                     animate={{ x: [0, 4, 0] }}
@@ -158,8 +158,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { number: 3, label: "Courses Available", icon: "📚", suffix: "" },
-              { number: 1400, label: "Students Enrolled", icon: "👥", suffix: "+" },
-              { number: 6, label: "Team Members", icon: "🌟", suffix: "" }
+              { number: 1400, label: "Enrolled Students", icon: "🎓", suffix: "+" },
+              { number: 6, label: "Team Members", icon: "👥", suffix: "" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
