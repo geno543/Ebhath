@@ -214,7 +214,7 @@ export default function About() {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-300" />
                   <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
                   <p className="text-gray-300 leading-relaxed">
-                  A world where language is no longer a barrier to scientific knowledge.                  </p>
+                  A world where language is no longer a barrier to scientific.                 </p>
                 </div>
               </div>
             </motion.div>
