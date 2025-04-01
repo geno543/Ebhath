@@ -59,16 +59,7 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="text-center lg:text-left"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="relative inline-block"
-              >
-                <span className="relative inline-block px-4 py-2 text-sm font-medium text-blue-200 bg-blue-500/10 rounded-full border border-blue-400/20 mb-6">
-                  🌍 Research Education for Everyone
-                </span>
-              </motion.div>
+
               
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -359,7 +350,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">Our Vision</h4>
-                  <p className="text-gray-400">A world where language is no longer a barrier to scientific knowledge</p>
+                  <p className="text-gray-400">A world where language is no longer a barrier to scientific knowledge.</p>
                 </div>
               </motion.div>
             </motion.div>
