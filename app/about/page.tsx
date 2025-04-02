@@ -8,10 +8,9 @@ import { FaGraduationCap, FaGlobe, FaBook, FaUsers, FaChalkboardTeacher, FaHands
 export default function About() {
   const milestones = 
     [
-      { year: "2021", title: "Foundation", description: "Ebhath was established with a vision to break language barriers in research education." },
-      { year: "2022", title: "First Courses", description: "Launched our first research courses in Arabic and Filipino, marking the beginning of our efforts." },
-      { year: "2023", title: "Growth", description: "Expanded to include courses in Swahili and reached 1,000+ students." },
-      { year: "2024", title: "Recognition", description: " Gained recognition for our impact in breaking language barriers in research education, furthering our global reach." },
+      { year: "2023", title: "Foundation", description: "Ebhath was established with a vision to break language barriers in research education." },
+      { year: "2023", title: "First Courses", description: "Launched our first research courses in Arabic and Filipino, marking the beginning of our efforts." },
+      { year: "2024", title: "Growth", description: "Expanded to include courses in Swahili and reached 1,500+ students." },
       { year: "2025", title: "Expansion", description: "Launched Egypt’s Ebhath Research Program, integrating both Arabic and English in research education." }
   ]
   
