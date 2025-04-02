@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher } from 'react-icons/fa';
-import Link from 'next/link';
 
 interface Course {
   id: number;
@@ -16,7 +15,6 @@ interface Course {
   category: string;
   image: string;
   available: string;
-  link?: string;
   rating?: number;
 }
 
@@ -26,39 +24,37 @@ const courses: Course[] = [
     title: "Arabic course",
     description: "By Mohammed Mashhour",
     language: "Arabic",
-    duration: "8 weeks",
+    duration: "6 weeks",
     level: "Beginner",
     students: 1500,
-    category: "Coming Soon",
-    image: "https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
-    available: 'Available',
-    link: 'https://www.youtube.com/@ebhath/'
+    category: "Coming Soon"
+   , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
+  available:'Available'
   },
   {
     id: 2,
     title: "Filipino course",
     description: "By Jake Yap",
     language: "Filipino",
-    duration: "8 weeks",
+    duration: "6 weeks",
     level: "Beginner",
-    students: To Be Announced,
+    students: 200,
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
-    category: "Coming Soon",
-    available: 'Coming Soon'
+    category: "Coming Soon"
+    ,available:'Coming Soon'
   },
   {
     id: 3,
     title: "Swahili course",
     description: "By Olive Stanely",
     language: "Swahili",
-    duration: "8 weeks",
+    duration: "6 weeks",
     level: "Beginner",
-    students: To Be Announced,
+    students: 150,
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
-    category: "Methodology",
-    available: 'Coming Soon'
-  }
-];
+    category: "Methodology"
+    ,available:'Coming Soon'
+  },
   // {
   //   id: 4,
   //   title: "Research Paper Writing",
@@ -240,11 +236,11 @@ export default function Courses() {
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedCategory === category
                           ? 'bg-blue-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-blue-500/20'
-                      }`}
+                      }}
                     >
                       {category}
                     </button>
@@ -265,11 +261,11 @@ export default function Courses() {
                     <button
                       key={language}
                       onClick={() => setSelectedLanguage(language)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedLanguage === language
                           ? 'bg-purple-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-purple-500/20'
-                      }`}
+                      }}
                     >
                       {language}
                     </button>
@@ -290,11 +286,11 @@ export default function Courses() {
                     <button
                       key={level}
                       onClick={() => setSelectedLevel(level)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedLevel === level
                           ? 'bg-green-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-green-500/20'
-                      }`}
+                      }}
                     >
                       {level}
                     </button>
