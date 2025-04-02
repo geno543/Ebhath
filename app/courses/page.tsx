@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface Course {
   id: number;
@@ -15,6 +16,7 @@ interface Course {
   category: string;
   image: string;
   available: string;
+  link?: string;
   rating?: number;
 }
 
@@ -27,9 +29,10 @@ const courses: Course[] = [
     duration: "6 weeks",
     level: "Beginner",
     students: 1500,
-    category: "Coming Soon"
-   , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
-  available:'Available'
+    category: "Coming Soon",
+    image: "https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
+    available: 'Available',
+    link: 'https://www.youtube.com/@ebhath/'
   },
   {
     id: 2,
@@ -40,8 +43,8 @@ const courses: Course[] = [
     level: "Beginner",
     students: 200,
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
-    category: "Coming Soon"
-    ,available:'Coming Soon'
+    category: "Coming Soon",
+    available: 'Coming Soon'
   },
   {
     id: 3,
@@ -52,9 +55,10 @@ const courses: Course[] = [
     level: "Beginner",
     students: 150,
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
-    category: "Methodology"
-    ,available:'Coming Soon'
-  },
+    category: "Methodology",
+    available: 'Coming Soon'
+  }
+];
   // {
   //   id: 4,
   //   title: "Research Paper Writing",
