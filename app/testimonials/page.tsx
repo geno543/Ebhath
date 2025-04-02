@@ -7,14 +7,14 @@ import { FaQuoteLeft } from 'react-icons/fa';
 const testimonials = [
   {
     text: "When I started learning research, I noticed a significant gap in resources in my language, Arabic. As an Egyptian, I found it overwhelming to rely solely on English sources. Ebhath was instrumental truly, and it was the reason I got into the Pioneer Research Program. During the interview, I found myself recalling the insights shared by the Arabic course instructor.",
-    name: "Student",
-    role: "Pioneer Research Program Participant",
-    location: "Egypt"
+    name: "Research Student",
+    role: "Program Participant",
+    location: "Arabic Program"
   },
   {
     text: "I appreciate you getting in touch with me and your kind remarks. It is truly an honour to know people from the next generation, like you, and I wish you the best of luck in the future. I have faith that our beloved nation and humanity will both prosper in the future.",
-    name: "Course Instructor",
-    role: "Research Mentor",
+    name: "Amal Amin",
+    role: "Founder and chair of Women in Science without Borders",
     location: "Egypt"
   },
   {
