@@ -10,6 +10,7 @@ export default function About() {
     [
       { year: "2023", title: "Foundation", description: "Ebhath was established with a vision to break language barriers in research education." },
       { year: "2023", title: "First Courses", description: "Launched our first research courses in Arabic and Filipino, marking the beginning of our efforts." },
+      { year: "2024", title: "First Courses", description: "Launched our first research courses in Arabic and Filipino, marking the beginning of our efforts." },
       { year: "2024", title: "Growth", description: "Expanded to include courses in Swahili and reached 1,500+ students." },
       { year: "2025", title: "Expansion", description: "Launched Egypt’s Ebhath Research Program, integrating both Arabic and English in research education." }
   ]
