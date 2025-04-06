@@ -11,7 +11,7 @@ interface Course {
   language: string;
   duration: string;
   level: string;
-  students: number;
+  students: string;
   category: string;
   image: string;
   available: string;
@@ -24,10 +24,10 @@ const courses: Course[] = [
     title: "Arabic course",
     description: "By Mohammed Mashhour",
     language: "Arabic",
-    duration: "4 weeks",
+    duration: "6 weeks",
     level: "Beginner",
-    students: 1500,
-    category: "Coming Soon"
+    students: "To Be Announced",
+    category: "Scientific Research"
    , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
   available:'Available'
   },
@@ -36,9 +36,9 @@ const courses: Course[] = [
     title: "Filipino course",
     description: "By Jake Yap",
     language: "Filipino",
-    duration: "4 weeks",
+    duration: "6 weeks",
     level: "Beginner",
-    students: 200,
+    students: "To Be Announced",
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
     category: "Coming Soon"
     ,available:'Coming Soon'
@@ -48,11 +48,11 @@ const courses: Course[] = [
     title: "Swahili course",
     description: "By Olive Stanely",
     language: "Swahili",
-    duration: "5 weeks",
+    duration: "6 weeks",
     level: "Beginner",
-    students: 150,
+    students: "To Be Announced",
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
-    category: "Methodology"
+    category: "Coming Soon"
     ,available:'Coming Soon'
   },
   // {
