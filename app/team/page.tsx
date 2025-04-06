@@ -59,7 +59,19 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/mohamed-ramadan-551a17272/',
       github: 'https://github.com/geno543'
     }
-  }
+  },
+   {
+    id: 6,
+    name: 'Mohammed Mashhour',
+    role: 'Founder/Arabic course instructor.',
+    bio: 'Egypt',
+    image: '/images/team/ebhathMohamed.png', // Local image path
+    socialLinks: {
+      youtube: 'https://youtube.com/@MohammedMashhour',
+      instagram: 'https://instagram.com/m.mashhour',
+      // github: 'https://github.com/MohammedMashhour'
+    }
+  },
 ];
 
 export default function TeamPage() {
