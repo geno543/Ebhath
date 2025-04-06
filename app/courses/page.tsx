@@ -155,7 +155,7 @@ export default function Courses() {
         </div>
          <div className="flex items-center text-gray-400 group">
                         <FaUsers className="w-4 h-4 mr-2 group-hover:text-purple-400 transition-colors duration-300" />
-                        <span className="group-hover:text-purple-400 transition-colors duration-300">{course.students}</span>
+                        <span className="group-hover:text-purple-400 transition-colors duration-300"></span>
                       </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
