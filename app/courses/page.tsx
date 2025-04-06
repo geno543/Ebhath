@@ -153,7 +153,10 @@ export default function Courses() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a365d2e_1px,transparent_1px),linear-gradient(to_bottom,#1a365d2e_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
-        
+         <div className="flex items-center text-gray-400 group">
+                        <FaUsers className="w-4 h-4 mr-2 group-hover:text-purple-400 transition-colors duration-300" />
+                        <span className="group-hover:text-purple-400 transition-colors duration-300">{course.students}</span>
+                      </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
