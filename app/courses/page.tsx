@@ -4,21 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher } from 'react-icons/fa';
 
-interface Course {
-  id: number;
-  title: string;
-  description: string;
-  language: string;
-  duration: string;
-  level: string;
-  students: number;
-  category: string;
-  image: string;
-  available: string;
-  rating?: number;
-}
-
-const courses: Course[] = [
+const courses = [
   {
     id: 1,
     title: "Arabic course",
@@ -26,34 +12,33 @@ const courses: Course[] = [
     language: "Arabic",
     duration: "8 weeks",
     level: "Beginner",
-    students: 1500,
-    category: "Coming Soon"
-   , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
-  available:'Available'
+    students: 120,
+    rating: 4.8,
+    image: "https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
   },
   {
     id: 2,
     title: "Filipino course",
     description: "By Jake Yap",
     language: "Filipino",
-    duration: "8 weeks",
+    duration: "10 weeks",
     level: "Beginner",
     students: 200,
+    rating: 4.9,
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
-    category: "Coming Soon"
-    ,available:'Coming Soon'
+    category: "Statistics"
   },
   {
     id: 3,
     title: "Swahili course",
     description: "By Olive Stanely",
     language: "Swahili",
-    duration: "8 weeks",
+    duration: "6 weeks",
     level: "Beginner",
     students: 150,
+    rating: 4.7,
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
     category: "Methodology"
-    ,available:'Coming Soon'
   },
   // {
   //   id: 4,
@@ -104,16 +89,16 @@ export default function Courses() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
 
-  const sortCourses = (coursesToSort: Course[]) => {
+  const sortCourses = (courses: typeof courses) => {
     switch (sortBy) {
       case "popular":
-        return [...coursesToSort].sort((a, b) => b.students - a.students);
+        return [...courses].sort((a, b) => b.students - a.students);
       case "rating":
-        return [...coursesToSort].sort((a, b) => b.rating - a.rating);
+        return [...courses].sort((a, b) => b.rating - a.rating);
       case "newest":
-        return [...coursesToSort]; // Assuming the array is already in chronological order
+        return [...courses]; // Assuming the array is already in chronological order
       default:
-        return coursesToSort;
+        return courses;
     }
   };
 
@@ -236,11 +221,11 @@ export default function Courses() {
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedCategory === category
                           ? 'bg-blue-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-blue-500/20'
-                      }}
+                      }`}
                     >
                       {category}
                     </button>
@@ -261,11 +246,11 @@ export default function Courses() {
                     <button
                       key={language}
                       onClick={() => setSelectedLanguage(language)}
-                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedLanguage === language
                           ? 'bg-purple-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-purple-500/20'
-                      }}
+                      }`}
                     >
                       {language}
                     </button>
@@ -286,11 +271,11 @@ export default function Courses() {
                     <button
                       key={level}
                       onClick={() => setSelectedLevel(level)}
-                      className={px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         selectedLevel === level
                           ? 'bg-green-500 text-white'
                           : 'bg-[#1E293B] text-gray-300 hover:bg-green-500/20'
-                      }}
+                      }`}
                     >
                       {level}
                     </button>
@@ -358,10 +343,10 @@ export default function Courses() {
                         <FaGraduationCap className="w-4 h-4 mr-2 group-hover:text-green-400 transition-colors duration-300" />
                         <span className="group-hover:text-green-400 transition-colors duration-300">{course.level}</span>
                       </div>
-                      {/* <div className="flex items-center text-yellow-400">
+                      <div className="flex items-center text-yellow-400">
                         <FaStar className="w-4 h-4 mr-2" />
                         <span>{course.rating}</span>
-                      </div> */}
+                      </div>
                     </div>
 
                     {/* Action Button */}
@@ -370,7 +355,7 @@ export default function Courses() {
                       whileTap={{ scale: 0.98 }}
                       className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
                     >
-                      <span>{course.available}</span>
+                      <span>Enroll Now</span>
                       <svg 
                         className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
                         fill="none" 
