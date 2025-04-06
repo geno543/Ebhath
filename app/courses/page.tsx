@@ -26,7 +26,7 @@ const courses: Course[] = [
     language: "Arabic",
     duration: "6 weeks",
     level: "Beginner",
-    students: "1500",
+    students: 1500,
     category: "Scientific Research"
    , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
   available:'Available'
@@ -38,7 +38,7 @@ const courses: Course[] = [
     language: "Filipino",
     duration: "6 weeks",
     level: "Beginner",
-    students: "200",
+    students: 200,
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
     category: "Coming Soon"
     ,available:'Coming Soon'
@@ -50,7 +50,7 @@ const courses: Course[] = [
     language: "Swahili",
     duration: "6 weeks",
     level: "Beginner",
-    students: "200",
+    students: 150,
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
     category: "Coming Soon"
     ,available:'Coming Soon'
