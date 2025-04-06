@@ -50,7 +50,7 @@ const teamMembers = [
       // instagram: 'https://instagram.com/olive.swahili'
     }
   },{
-    id: 5,
+    id: 6,
     name: 'Mohamed Ramadan',
     role: 'Web Manager',
     bio: 'Egypt',
@@ -61,7 +61,7 @@ const teamMembers = [
     }
   },
    {
-    id: 6,
+    id: 5,
     name: 'Mohammed Dahman',
     role: 'Program Director',
     bio: 'Egypt',
