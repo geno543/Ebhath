@@ -62,13 +62,12 @@ const teamMembers = [
   },
    {
     id: 6,
-    name: 'Mohammed Mashhour',
-    role: 'Founder/Arabic course instructor.',
+    name: 'Mohammed Dahman',
+    role: 'Program Director',
     bio: 'Egypt',
-    image: '/images/team/ebhathMohamed.png', // Local image path
+    image: '/images/team/dahman.png', // Local image path
     socialLinks: {
-      youtube: 'https://youtube.com/@MohammedMashhour',
-      instagram: 'https://instagram.com/m.mashhour',
+      linkedin: 'https://www.linkedin.com/in/muhammed-dahman-34868927a/',
       // github: 'https://github.com/MohammedMashhour'
     }
   },
