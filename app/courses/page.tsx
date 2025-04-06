@@ -351,10 +351,6 @@ export default function Courses() {
                         <span className="group-hover:text-blue-400 transition-colors duration-300">{course.duration}</span>
                       </div>
                       <div className="flex items-center text-gray-400 group">
-                        <FaUsers className="w-4 h-4 mr-2 group-hover:text-purple-400 transition-colors duration-300" />
-                        <span className="group-hover:text-purple-400 transition-colors duration-300">{course.students}+ students</span>
-                      </div>
-                      <div className="flex items-center text-gray-400 group">
                         <FaGraduationCap className="w-4 h-4 mr-2 group-hover:text-green-400 transition-colors duration-300" />
                         <span className="group-hover:text-green-400 transition-colors duration-300">{course.level}</span>
                       </div>
