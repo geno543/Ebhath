@@ -22,7 +22,7 @@ const courses: Course[] = [
   {
     id: 1,
     title: "Arabic course",
-    description: "By Mohammed Mashhour",
+    description: "By Mohamed Moussa",
     language: "Arabic",
     duration: "6 weeks",
     level: "Beginner",
