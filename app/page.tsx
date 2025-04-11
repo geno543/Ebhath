@@ -135,92 +135,6 @@ export default function Home() {
           </div>
         </div>
 {/* Visual Element */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="hidden lg:block relative"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-3xl transform rotate-6 scale-105 blur-xl" />
-                <div className="relative bg-gradient-to-br from-[#020B1C] to-[#041536] rounded-3xl border border-white/10 backdrop-blur-xl p-8 shadow-2xl">
-                  <div className="space-y-6">
-                    {/* Research Methodology UI */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 rounded-full bg-red-400" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                        <div className="w-3 h-3 rounded-full bg-green-400" />
-                      </div>
-                      <div className="text-sm text-blue-300">Research Methodology Steps</div>
-                    </div>
-
-                    {/* Research Steps */}
-                    <div className="space-y-4">
-                      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-400/20">
-                        <h3 className="text-blue-300 text-sm font-medium mb-2">1. Research Question</h3>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300">
-                              ?
-                            </div>
-                            <div className="h-2 bg-blue-400/20 rounded w-full" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-400/20">
-                        <h3 className="text-blue-300 text-sm font-medium mb-2">2. Literature Review</h3>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300">
-                              📚
-                            </div>
-                            <div className="flex-1 space-y-1">
-                              <div className="h-2 bg-blue-400/20 rounded w-full" />
-                              <div className="h-2 bg-blue-400/20 rounded w-3/4" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-400/20">
-                        <h3 className="text-blue-300 text-sm font-medium mb-2">3. Data Collection</h3>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300">
-                              📊
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex space-x-1">
-                                <div className="h-4 w-1/6 bg-blue-500/30 rounded" />
-                                <div className="h-4 w-2/6 bg-blue-500/40 rounded" />
-                                <div className="h-4 w-3/6 bg-blue-500/50 rounded" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-400/20">
-                        <h3 className="text-blue-300 text-sm font-medium mb-2">4. Analysis</h3>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300">
-                              🔍
-                            </div>
-                            <div className="flex-1">
-                              <div className="grid grid-cols-3 gap-1">
-                                <div className="h-3 bg-blue-500/20 rounded" />
-                                <div className="h-3 bg-blue-500/30 rounded" />
-                                <div className="h-3 bg-blue-500/40 rounded" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Progress Bar */}
                     <div className="space-y-2">
                       <div className="h-2 bg-blue-500/20 rounded-full">
@@ -231,12 +145,7 @@ export default function Home() {
                         <span>75%</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+                 
 
         {/* Scroll Indicator */}
         <motion.div 
