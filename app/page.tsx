@@ -135,17 +135,6 @@ export default function Home() {
           </div>
         </div>
 {/* Visual Element */}
-                    {/* Progress Bar */}
-                    <div className="space-y-2">
-                      <div className="h-2 bg-blue-500/20 rounded-full">
-                        <div className="h-full w-3/4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
-                      </div>
-                      <div className="flex justify-between text-sm text-blue-300">
-                        <span>Research Progress</span>
-                        <span>75%</span>
-                      </div>
-                    </div>
-                 
 
         {/* Scroll Indicator */}
         <motion.div 
