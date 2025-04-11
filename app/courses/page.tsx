@@ -19,19 +19,18 @@ interface Course {
 }
 
 const courses: Course[] = [
-{
-  id: 1,
-  title: "Arabic course",
-  description: "By Mohamed Moussa",
-  language: "Arabic",
-  duration: "6 weeks",
-  level: "Beginner",
-  students: "To Be Announced",
-  category: "Scientific Research",
-  image: "https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
-  available: 'Available',
-  link: "https://www.youtube.com/@ebhath/"  // Add this line
-},
+  {
+    id: 1,
+    title: "Arabic course",
+    description: "By Mohamed Moussa",
+    language: "Arabic",
+    duration: "6 weeks",
+    level: "Beginner",
+    students: "To Be Announced",
+    category: "Scientific Research"
+   , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
+  available:'Available'
+  },
   {
     id: 2,
     title: "Filipino course",
@@ -364,27 +363,22 @@ export default function Courses() {
                       </div> */}
                     </div>
 
-{/* Action Button */}
-<motion.button
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
-  onClick={() => {
-    if (course.id === 1 && course.link) {
-      window.open(course.link, '_blank');
-    }
-  }}
->
-  <span>{course.available}</span>
-  <svg 
-    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-    fill="none" 
-    stroke="currentColor" 
-    viewBox="0 0 24 24"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-  </svg>
-</motion.button>
+                    {/* Action Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
+                    >
+                      <span>{course.available}</span>
+                      <svg 
+                        className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>
