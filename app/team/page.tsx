@@ -65,7 +65,7 @@ const teamMembers = [
     name: 'Mohammed Dahman',
     role: 'Program Director',
     bio: 'Egypt',
-    image: 'public/images/team/dahman.jpeg', // Local image path
+    image: '/images/team/dahman.jpeg', // Local image path
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/muhammed-dahman-34868927a/',
       // github: 'https://github.com/MohammedMashhour'
