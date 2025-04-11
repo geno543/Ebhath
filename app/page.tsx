@@ -368,7 +368,7 @@ export default function Home() {
               <div className="relative bg-[#162544] rounded-3xl p-6 border border-blue-500/20">
                 <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?q=80&w=2070&auto=format&fit=crop"
+                    src="public/images/WhatsApp Image 2025-04-11 at 15.19.13_04b4f194.jpg"
                     alt="Research Education"
                     width={2070}
                     height={1380}
