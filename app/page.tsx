@@ -38,9 +38,9 @@ export default function Home() {
                 delay: i * 1.5,
               }}
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                fontSize: `${Math.random() * 20 + 10}px`,
+                left: ${Math.random() * 100}%,
+                top: ${Math.random() * 100}%,
+                fontSize: ${Math.random() * 20 + 10}px,
                 color: 'rgba(147, 197, 253, 0.15)',
               }}
             >
@@ -134,7 +134,6 @@ export default function Home() {
            
           </div>
         </div>
-{/* Visual Element */}
 
         {/* Scroll Indicator */}
         <motion.div 
@@ -255,7 +254,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300`} />
+                <div className={absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300} />
                 <Link href={feature.href} className="block h-full">
                   <div className="relative h-full bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-4">
@@ -368,7 +367,7 @@ export default function Home() {
               <div className="relative bg-[#162544] rounded-3xl p-6 border border-blue-500/20">
                 <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden">
                   <Image
-                    href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6d9f66f297ab97f9cde8b84bea45baa0b344d6d7_scientific_image__1_.jpg"
+                    src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/d906f0acce3300ef934a5667739e2f8b2bebb64d_whatsapp_image_2025-04-11_at_15.19.13_04b4f194.jpg"
                     alt="Research Education"
                     width={2070}
                     height={1380}
