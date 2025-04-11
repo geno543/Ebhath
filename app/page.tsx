@@ -368,10 +368,10 @@ export default function Home() {
               <div className="relative bg-[#162544] rounded-3xl p-6 border border-blue-500/20">
                 <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden">
                   <Image
-                    href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/d906f0acce3300ef934a5667739e2f8b2bebb64d_whatsapp_image_2025-04-11_at_15.19.13_04b4f194.jpg"
+                    href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b28f474521a6bf2807fa8c2cecf55e1a4af255e5_whatsapp_image_2025-04-11_at_15.19.13_04b4f194__3_.jpg"
                     alt="Research Education"
                     width={2070}
-                    height={1380}
+                    height={1035}
                     className="object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
                     priority
                   />
