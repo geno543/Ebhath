@@ -412,7 +412,7 @@ export default function Home() {
 
             {/* Image */}
             <div className="lg:col-span-1">
-              <UploadableCard />
+
             </div>
           </div>
         </div>
