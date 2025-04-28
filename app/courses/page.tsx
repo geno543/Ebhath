@@ -350,7 +350,7 @@ export default function Courses() {
                     <p className="text-gray-400 mb-4 line-clamp-2">{course.description}</p>
 
                     {/* Course Meta */}
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="flex items-center text-gray-400 group">
                         <FaClock className="w-4 h-4 mr-2 group-hover:text-blue-400 transition-colors duration-300" />
                         <span className="group-hover:text-blue-400 transition-colors duration-300">{course.duration}</span>
@@ -360,38 +360,49 @@ export default function Courses() {
                         <span className="group-hover:text-green-400 transition-colors duration-300">{course.level}</span>
                       </div>
                     </div>
-                    
-                    {/* YouTube Link for Arabic Course */}
-                    {course.youtubeLink && (
-                      <div className="mb-4">
-                        <a 
-                          href={course.youtubeLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center text-red-400 hover:text-red-500 transition-colors duration-300"
+
+                    {/* Action Button - Now links to YouTube for Arabic course */}
+                    {course.youtubeLink ? (
+                      <a 
+                        href={course.youtubeLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block w-full"
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
                         >
                           <FaYoutube className="w-5 h-5 mr-2" />
-                          <span>Watch on YouTube</span>
-                        </a>
-                      </div>
-                    )}
-
-                    {/* Action Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
-                    >
-                      <span>{course.available}</span>
-                      <svg 
-                        className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
+                          <span>{course.available}</span>
+                          <svg 
+                            className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </motion.button>
+                      </a>
+                    ) : (
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center group"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </motion.button>
+                        <span>{course.available}</span>
+                        <svg 
+                          className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </motion.button>
+                    )}
                   </div>
                 </div>
               </motion.div>
