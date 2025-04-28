@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher } from 'react-icons/fa';
+import { FaGraduationCap, FaClock, FaUsers, FaStar, FaGlobe, FaBook, FaChalkboardTeacher, FaYoutube } from 'react-icons/fa';
 
 interface Course {
   id: number;
@@ -16,6 +16,7 @@ interface Course {
   image: string;
   available: string;
   rating?: number;
+  youtubeLink?: string;
 }
 
 const courses: Course[] = [
@@ -27,9 +28,10 @@ const courses: Course[] = [
     duration: "6 weeks",
     level: "Beginner",
     students: "To Be Announced",
-    category: "Scientific Research"
-   , image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
-  available:'Available'
+    category: "Scientific Research",
+    image:"https://plus.unsplash.com/premium_photo-1675623429538-d1d00076c925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFyYWJpYyUyMGxhbmd1YWdlfGVufDB8fDB8fHww",
+    available:'Available',
+    youtubeLink: 'https://www.youtube.com/@ebhath'
   },
   {
     id: 2,
@@ -40,8 +42,8 @@ const courses: Course[] = [
     level: "Beginner",
     students: "To Be Announced",
     image: "https://www.divinalaw.com/wp-content/uploads/2020/05/Naturalization-1024x707.jpg",
-    category: "Coming Soon"
-    ,available:'Coming Soon'
+    category: "Coming Soon",
+    available:'Coming Soon'
   },
   {
     id: 3,
@@ -52,8 +54,8 @@ const courses: Course[] = [
     level: "Beginner",
     students: "To Be Announced",
     image: "https://www.soas.ac.uk/sites/default/files/styles/narrow_large/public/2022-10/shutterstock_668318569.jpg?h=dc68203d&itok=JXgTzRpH",
-    category: "Coming Soon"
-    ,available:'Coming Soon'
+    category: "Coming Soon",
+    available:'Coming Soon'
   },
   // {
   //   id: 4,
@@ -109,7 +111,7 @@ export default function Courses() {
 //      case "popular":
 //      return [...coursesToSort].sort((a, b) => b.students - a.students);
       case "rating":
-        return [...coursesToSort].sort((a, b) => b.rating - a.rating);
+        return [...coursesToSort].sort((a, b) => (b.rating || 0) - (a.rating || 0));
       case "newest":
         return [...coursesToSort]; // Assuming the array is already in chronological order
       default:
@@ -348,7 +350,7 @@ export default function Courses() {
                     <p className="text-gray-400 mb-4 line-clamp-2">{course.description}</p>
 
                     {/* Course Meta */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="flex items-center text-gray-400 group">
                         <FaClock className="w-4 h-4 mr-2 group-hover:text-blue-400 transition-colors duration-300" />
                         <span className="group-hover:text-blue-400 transition-colors duration-300">{course.duration}</span>
@@ -357,11 +359,22 @@ export default function Courses() {
                         <FaGraduationCap className="w-4 h-4 mr-2 group-hover:text-green-400 transition-colors duration-300" />
                         <span className="group-hover:text-green-400 transition-colors duration-300">{course.level}</span>
                       </div>
-                      {/* <div className="flex items-center text-yellow-400">
-                        <FaStar className="w-4 h-4 mr-2" />
-                        <span>{course.rating}</span>
-                      </div> */}
                     </div>
+                    
+                    {/* YouTube Link for Arabic Course */}
+                    {course.youtubeLink && (
+                      <div className="mb-4">
+                        <a 
+                          href={course.youtubeLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center text-red-400 hover:text-red-500 transition-colors duration-300"
+                        >
+                          <FaYoutube className="w-5 h-5 mr-2" />
+                          <span>Watch on YouTube</span>
+                        </a>
+                      </div>
+                    )}
 
                     {/* Action Button */}
                     <motion.button
