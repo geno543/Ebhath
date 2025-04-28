@@ -6,6 +6,63 @@ import AnimatedSection from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaGlobe, FaUsers, FaBook, FaArrowRight } from 'react-icons/fa';
 import CountUp from 'react-countup';
+import { useState } from 'react';
+
+// Separate UploadableCard component
+function UploadableCard() {
+  // start with your public image, URL-encoded so spaces aren't an issue
+  const [imageSrc, setImageSrc] = useState(
+    encodeURI('/images/WhatsApp Image 2025-04-11 at 15.19.08_cbd134e0.jpg')
+  )
+
+  // when the user picks a file, create a blob URL for preview
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    const blobUrl = URL.createObjectURL(file)
+    setImageSrc(blobUrl)
+  }
+
+  return (
+    <div>
+      {/* file picker */}
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className="mb-4"
+      />
+
+      {/* animated card */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-3xl transform rotate-3 scale-105 blur-xl" />
+        <div className="relative bg-[#162544] rounded-3xl p-6 border border-blue-500/20">
+          <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt="Uploaded preview"
+              width={2070}
+              height={1380}
+              // blob URLs need unoptimized; local/public images will still work fine
+              unoptimized
+              className="object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
+              priority
+            />
+          </div>
+          {/* Decorative Elements */}
+          <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl" />
+          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-xl" />
+        </div>
+      </motion.div>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -14,12 +71,12 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#020B1C] via-[#041536] to-[#061F4E] overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          Research-themed pattern background
+          {/* Research-themed pattern background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a365d2e_1px,transparent_1px),linear-gradient(to_bottom,#1a365d2e_1px,transparent_1px)] bg-[size:24px_24px]" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#020B1C]/80 via-[#041536]/50 to-[#061F4E]/50" />
         </div>
 
-        Floating Research Elements
+        {/* Floating Research Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(8)].map((_, i) => (
             <motion.div
@@ -38,9 +95,9 @@ export default function Home() {
                 delay: i * 1.5,
               }}
               style={{
-                left: ${Math.random() * 100}%,
-                top: ${Math.random() * 100}%,
-                fontSize: ${Math.random() * 20 + 10}px,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 20 + 10}px`,
                 color: 'rgba(147, 197, 253, 0.15)',
               }}
             >
@@ -59,8 +116,6 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="text-center lg:text-left"
             >
-
-              
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -131,7 +186,7 @@ export default function Home() {
             </motion.div>
 
             {/* Visual Element */}
-           
+            {/* You can add visual content here */}
           </div>
         </div>
 
@@ -254,7 +309,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className={absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300`} />
                 <Link href={feature.href} className="block h-full">
                   <div className="relative h-full bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-4">
@@ -356,57 +411,12 @@ export default function Home() {
             </motion.div>
 
             {/* Image */}
-          export default function UploadableCard() {
-  // start with your public image, URL-encoded so spaces aren’t an issue
-  const [imageSrc, setImageSrc] = useState(
-    encodeURI('/images/WhatsApp Image 2025-04-11 at 15.19.08_cbd134e0.jpg')
-  )
-
-  // when the user picks a file, create a blob URL for preview
-  const handleFileChange = (e) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const blobUrl = URL.createObjectURL(file)
-    setImageSrc(blobUrl)
-  }
-
-  return (
-    <div>
-      {/* file picker */}
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        className="mb-4"
-      />
-
-      {/* animated card */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="relative"
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-3xl transform rotate-3 scale-105 blur-xl" />
-        <div className="relative bg-[#162544] rounded-3xl p-6 border border-blue-500/20">
-          <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt="Uploaded preview"
-              width={2070}
-              height={1380}
-              // blob URLs need unoptimized; local/public images will still work fine
-              unoptimized
-              className="object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
-              priority
-            />
+            <div className="lg:col-span-1">
+              <UploadableCard />
+            </div>
           </div>
-          {/* Decorative Elements */}
-          <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl" />
-          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-xl" />
         </div>
-      </motion.div>
-    </div>
-  )
+      </AnimatedSection>
+    </main>
+  );
 }
