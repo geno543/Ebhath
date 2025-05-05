@@ -77,10 +77,10 @@ const teamMembers = [
     bio: 'Egypt',
     image: '/images/team/zizo.jpg', // Local image path
     socialLinks: {
-      linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3/',
       facebook: 'https://www.facebook.com/share/1AmxMPstVV/'
 // github: 'https://github.com/MohammedMashhour'
-    }
+    }}
   
 ];
 
