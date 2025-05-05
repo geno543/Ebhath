@@ -70,7 +70,18 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/muhammed-dahman-34868927a/',
       // github: 'https://github.com/MohammedMashhour'
     }
-  },
+  }, {
+    id: 6,
+    name: 'Abdelaziz Ahmed',
+    role: 'Chief Operations Officer',
+    bio: 'Egypt',
+    image: '/images/team/zizo.jpg', // Local image path
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      facebook: 'https://www.facebook.com/share/1AmxMPstVV/'
+// github: 'https://github.com/MohammedMashhour'
+    }
+  
 ];
 
 export default function TeamPage() {
