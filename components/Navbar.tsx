@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiSearch } from 'react-icons/fi';
@@ -27,7 +28,7 @@ const Navbar = () => {
     { href: '/courses', label: 'Courses' },
     { href: '/team', label: 'Team' },
     { href: '/contact', label: 'Contact' },
-    { href: '/apply', label: 'Apply' },
+    { href: '/research-programs', label: 'Research Programs' },
   ];
 
   return (
@@ -43,9 +44,15 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
-            Ebhath
+            <Image
+              src="/images/Ebhath_Official_Logo-08.png"
+              alt="Ebhath Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -72,10 +79,10 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              href="/apply"
+              href="#donation"
               className="ml-4 px-6 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25 hover:shadow-blue-600/25"
             >
-              Join Now
+              Donation
             </Link>
           </div>
 
@@ -119,11 +126,11 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                href="/apply"
+                href="#donation"
                 onClick={() => setIsOpen(false)}
                 className="block px-4 py-2 mt-4 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors text-center shadow-lg shadow-blue-500/25"
               >
-                Join Now
+                Donation
               </Link>
             </div>
           </motion.div>
