@@ -101,7 +101,7 @@ export default function Home() {
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute"
+              className="absolute text-blue-300/20 hover:text-blue-300/40 transition-colors duration-500"
               initial={{ opacity: 0, scale: 0 }}
               animate={{
                 opacity: [0, 0.4, 0.7, 0.4, 0],
@@ -120,7 +120,6 @@ export default function Home() {
                 top: `${Math.random() * 100}%`,
                 fontSize: `${Math.random() * 16 + 12}px`,
               }}
-              className="text-blue-300/20 hover:text-blue-300/40 transition-colors duration-500"
             >
               {floatingIcons[i]}
             </motion.div>
