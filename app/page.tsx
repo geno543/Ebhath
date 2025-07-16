@@ -222,8 +222,8 @@ export default function Home() {
                     { lang: 'Arabic', flag: '🇸🇦', status: 'active' },
                     { lang: 'Filipino', flag: '🇵🇭', status: 'active' },
                     { lang: 'Swahili', flag: '🇰🇪', status: 'active' },
-                    { lang: 'Portuguese', flag: '🇧🇷', status: 'coming' },
-                    { lang: 'Hindi', flag: '🇮🇳', status: 'coming' }
+                    // { lang: 'Portuguese', flag: '🇧🇷', status: 'coming' },
+                    // { lang: 'Hindi', flag: '🇮🇳', status: 'coming' }
                   ].map((item, i) => (
                     <motion.span
                       key={item.lang}
