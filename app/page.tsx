@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaGlobe, FaUsers, FaBook, FaArrowRight } from 'react-icons/fa';
+import { FaGraduationCap, FaGlobe, FaUsers, FaBook, FaArrowRight, FaLightbulb, FaSearch, FaChartBar, FaFlask, FaBookOpen, FaBullseye } from 'react-icons/fa';
 import CountUp from 'react-countup';
 import { useState } from 'react';
 
@@ -41,6 +41,22 @@ function ImageCard() {
 }
 
 export default function Home() {
+  // Define the floating icons array
+  const floatingIcons = [
+    <FaBook key="book" />,
+    <FaFlask key="microscope" />,
+    <FaGraduationCap key="grad" />,
+    <FaBookOpen key="bookopen" />,
+    <FaLightbulb key="lightbulb" />,
+    <FaGlobe key="globe" />,
+    <FaSearch key="search" />,
+    <FaChartBar key="chart" />,
+    <FaFlask key="flask" />,
+    <FaBook key="dna" />,
+    <FaBookOpen key="bookopen2" />,
+    <FaBullseye key="bullseye" />
+  ];
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -106,7 +122,7 @@ export default function Home() {
               }}
               className="text-blue-300/20 hover:text-blue-300/40 transition-colors duration-500"
             >
-              {['📚', '🔬', '🎓', '📝', '💡', '🌍', '🔍', '📊', '⚗️', '🧬', '📖', '🎯'][i]}
+              {floatingIcons[i]}
             </motion.div>
           ))}
         </div>
