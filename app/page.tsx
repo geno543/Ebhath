@@ -301,7 +301,7 @@ export default function Home() {
                 >
                   <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm border border-white/10 p-8">
                     <Image
-                      src="/images/Ebhath_logo_herosection.png"
+                      src="/images/Ebhath_Official_Logo-08.png"
                       alt="Ebhath Research Organization"
                       width={500}
                       height={400}
