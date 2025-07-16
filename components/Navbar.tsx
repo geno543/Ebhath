@@ -47,7 +47,7 @@ const Navbar = () => {
             className="hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/images/Ebhath_Official_Logo-08.png"
+              src="/images/Ebhath_logo_herosection.png"
               alt="Ebhath Logo"
               width={120}
               height={40}
