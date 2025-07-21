@@ -183,26 +183,22 @@ export default function Home() {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
               >
-              import { motion } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
-
-<a
-  href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setIsOpen(false)}
-  className="group relative inline-flex items-center px-10 py-5 rounded-2xl text-lg font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/30 transform hover:scale-105 hover:-translate-y-1"
->
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-  <span className="relative z-10">Support Our Mission</span>
-  <motion.span
-    className="relative z-10 ml-3"
-    animate={{ x: [0, 6, 0] }}
-    transition={{ duration: 2, repeat: Infinity }}
-  >
-    <FaArrowRight className="inline-block" />
-  </motion.span>
-</a>
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center px-10 py-5 rounded-2xl text-lg font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/30 transform hover:scale-105 hover:-translate-y-1"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Support Our Mission</span>
+                  <motion.span
+                    className="relative z-10 ml-3"
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <FaArrowRight className="inline-block" />
+                  </motion.span>
+                </a>
 
                 <Link
                   href="/research-programs"
@@ -553,181 +549,11 @@ import { FaArrowRight } from 'react-icons/fa';
                 </div>
               </div>
             </motion.div>
-
-            {/* <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-2xl font-semibold text-white mb-4">Scholar Showcase</h3>
-                <div className="aspect-w-16 aspect-h-12 rounded-lg overflow-hidden bg-gray-700/50 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🎓</div>
-                    <p className="text-gray-400">Scholar photos coming soon</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div> */}
           </div>
         </div>
       </AnimatedSection>
-
-      {/* Hidden Application Section - Keep for future use */}
-      {/* 
-      <AnimatedSection className="py-24 bg-gradient-to-b from-gray-800 to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Research Program</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Join our global community of researchers and unlock your potential with our comprehensive research education platform.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: "👨‍🎓",
-                title: "Apply as a Member",
-                description: "Join our program to learn research methodology in your native language",
-                gradient: "from-blue-500/20 to-blue-400/20",
-                href: "/apply?type=member",
-                cta: "Apply Now"
-              },
-              {
-                icon: "👨‍🏫",
-                title: "Apply as a Mentor",
-                description: "Share your expertise and help bridge the language gap in research education",
-                gradient: "from-purple-500/20 to-purple-400/20",
-                href: "/apply?type=mentor",
-                cta: "Join as Mentor"
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300`} />
-                <Link href={feature.href} className="block h-full">
-                  <div className="relative h-full bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-blue-500/20 transition-all duration-300">
-                    <div className="space-y-4">
-                      <span className="inline-block text-4xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                        {feature.icon}
-                      </span>
-                      <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-400 leading-relaxed">
-                        {feature.description}
-                      </p>
-                      <button className="mt-6 w-full px-6 py-3 bg-blue-500/20 text-blue-300 rounded-lg font-medium hover:bg-blue-500/30 transition-colors group-hover:bg-blue-500 group-hover:text-white">
-                        {feature.cta}
-                      </button>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-      */}
 
       {/* About Us Section */}
       <AnimatedSection className="py-24 bg-gradient-to-br from-[#0B1221] to-[#162544]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="inline-block">
-                <motion.h2 
-                  className="text-3xl md:text-4xl font-bold text-white mb-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  About Us
-                </motion.h2>
-                <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
-              </div>
-              
-              <motion.p 
-                className="text-lg text-gray-300 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                Ebhath is a fiscally sponsored official 501(c)3 nonprofit dedicated to closing the educational gap in scientific research resources by offering courses in underrepresented languages for underrepresented minorities. In 2023, Ebhath began working to bridge this gap in the Arabic language, and we are currently expanding our efforts to include Filipino and Swahili. We are currently recruiting mentors to develop courses in Portuguese and Indian languages, although translation and recording in these languages have not yet commenced.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <a 
-                  href="/about" 
-                  className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 group"
-                >
-                  <span>Learn More</span>
-                  <svg 
-                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              </motion.div>
-
-              {/* Stats or Additional Info */}
-              <motion.div 
-                className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-gray-700"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">Our Mission</h4>
-                  <p className="text-gray-400">Making scientific research education accessible across languages.</p>
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">Our Vision</h4>
-                  <p className="text-gray-400">A world where language is no longer a barrier to scientific knowledge.</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Image */}
-            <div className="lg:col-span-1">
-              <ImageCard />
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-    </main>
-  );
-}
+          <div className="gri
