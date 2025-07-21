@@ -420,6 +420,153 @@ export default function Home() {
                   }}
                 />
                 
+                {/* Floating particles */}
+                {[...Array(6)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-2 h-2 bg-blue-400/40 rounded-full"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      y: [-20, 20, -20],
+                      opacity: [0.2, 0.8, 0.2],
+                      scale: [0.5, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: Math.random() * 4 + 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.5,
+                    }}
+                  />
+                ))}
+                
+                {/* Main image container */}
+                <motion.div
+                  className="relative z-10 transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  whileHover={{ rotateY: 5, rotateX: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm border border-white/10 p-8">
+                    <Image
+                      src="/images/Ebhath_Official_Logo-08.png"
+                      alt="Ebhath Research Organization"
+                      width={500}
+                      height={400}
+                      className="object-contain w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
+                      priority
+                    />
+                    
+                    {/* Shine effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
+                      initial={{ x: "-100%" }}
+                      animate={{ x: "200%" }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatDelay: 5,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+                
+                {/* Decorative corner elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 border-t-2 border-r-2 border-blue-400/50 rounded-tr-lg"></div>
+                <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b-2 border-l-2 border-purple-400/50 rounded-bl-lg"></div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Enhanced Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2"
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+            className="text-sm text-gray-400 font-medium tracking-wider uppercase"
+          >
+            Scroll to explore
+          </motion.p>
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="relative group cursor-pointer"
+          >
+            <div className="w-8 h-14 rounded-full border-2 border-white/20 group-hover:border-blue-400/50 flex items-start justify-center p-2 transition-colors duration-300 backdrop-blur-sm">
+              <motion.div 
+                className="w-2 h-2 rounded-full bg-white/40 group-hover:bg-blue-400/70 transition-colors duration-300"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-purple-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Enhanced Stats Section */}
+      <AnimatedSection className="py-32 bg-gradient-to-b from-gray-900 via-[#0B1221] to-gray-800 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Impact</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Transforming research education across languages and cultures worldwide
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              { number: 3, label: "Courses Available", icon: "📚", suffix: "", description: "Comprehensive research programs" },
+              { number: 1400, label: "Enrolled Students", icon: "🎓", suffix: "+", description: "Global learners empowered" },
+              { number: 6, label: "Team Members", icon: "👥", suffix: "", description: "Dedicated professionals" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: index * 0.2, duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                {/* Animated background glow */}
+                <motion.div 
+                  className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"
+                  animate={{
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                
                 {/* Main card */}
                 <div className="relative bg-gradient-to-br from-[#0B1221]/80 to-[#162544]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 hover:border-blue-400/30 transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:-translate-y-2">
                   {/* Icon */}
