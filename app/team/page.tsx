@@ -71,7 +71,7 @@ const teamMembers = [
       // github: 'https://github.com/MohammedMashhour'
     }
   }, {
-    id: 6,
+    id: 7,
     name: 'Abdelaziz Ahmed',
     role: 'Chief Operations Officer',
     bio: 'Egypt',
@@ -80,7 +80,25 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3/',
       facebook: 'https://www.facebook.com/share/1AmxMPstVV/'
 // github: 'https://github.com/MohammedMashhour'
-    }}
+    }},{
+    id: 8,
+    name: 'Abdelrahman Atia',
+    role: 'Tech Director',
+    bio: 'Egypt',
+    image: '/images/team/Abdelrahman_Atia_Ebhath.jpg', // Local image path
+    socialLinks: {
+ 
+// github: 'https://github.com/MohammedMashhour'
+    }},{
+    id: 9,
+    name: 'Mohamed Talaat',
+    role: 'Web Developer',
+    bio: 'Egypt',
+    image: '/images/team/Mohamed_Talaat_ebhath.jpg', // Local image path
+    socialLinks: {
+
+// github: 'https://github.com/MohammedMashhour'
+    }},
   
 ];
 
