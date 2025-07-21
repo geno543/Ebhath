@@ -336,7 +336,7 @@ export default function Home() {
         </div>
 
         {/* Enhanced Scroll Indicator */}
-        <motion.div 
+{/*         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -365,7 +365,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-purple-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
           </motion.div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Enhanced Stats Section */}
       <AnimatedSection className="py-32 bg-gradient-to-b from-gray-900 via-[#0B1221] to-gray-800 relative overflow-hidden">
