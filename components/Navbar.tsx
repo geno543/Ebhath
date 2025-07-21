@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiSearch } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,12 +78,14 @@ const Navbar = () => {
                 <div className="absolute inset-0 rounded-lg bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             ))}
-            <Link
-              href="#donation"
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-4 px-6 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25 hover:shadow-blue-600/25"
             >
               Donation
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,13 +127,15 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#donation"
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block px-4 py-2 mt-4 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors text-center shadow-lg shadow-blue-500/25"
               >
                 Donation
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
