@@ -61,6 +61,17 @@ const teamMembers = [
     }
   },
    {
+         id: 6,
+    name: 'Mohamed Ramadan',
+    role: 'Web Manager',
+    bio: 'Egypt',
+    image: '/images/team/geno.png', // Local image path
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/mohamed-ramadan-551a17272/',
+      github: 'https://github.com/geno543'
+    }
+  },
+   {
     id: 5,
     name: 'Mohammed Dahman',
     role: 'Program Director',
@@ -80,7 +91,8 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3/',
       facebook: 'https://www.facebook.com/share/1AmxMPstVV/'
 // github: 'https://github.com/MohammedMashhour'
-    }},{
+    }
+   }, {
     id: 8,
     name: 'Abdelrahman Atia',
     role: 'Tech Director',
