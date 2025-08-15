@@ -50,7 +50,7 @@ const teamMembers = [
       // instagram: 'https://instagram.com/olive.swahili'
     }
   },{
-    id: 6,
+    id: 5,
     name: 'Mohamed Ramadan',
     role: 'Web Manager',
     bio: 'Egypt',
@@ -62,17 +62,16 @@ const teamMembers = [
   },
    {
          id: 6,
-    name: 'Mohamed Ramadan',
-    role: 'Web Manager',
+    name: 'Omar Emam',
+    role: 'Chief Operating Officer & Chief Product Officer',
     bio: 'Egypt',
-    image: '/images/team/geno.png', // Local image path
+    image: '/images/team/omar.png', // Local image path
     socialLinks: {
-      linkedin: 'https://www.linkedin.com/in/mohamed-ramadan-551a17272/',
-      github: 'https://github.com/geno543'
+      linkedin: 'https://www.linkedin.com/in/omar-emam-b71421306/',
     }
   },
    {
-    id: 5,
+    id: 7,
     name: 'Mohammed Dahman',
     role: 'Program Director',
     bio: 'Egypt',
@@ -82,7 +81,7 @@ const teamMembers = [
       // github: 'https://github.com/MohammedMashhour'
     }
   }, {
-    id: 7,
+    id: 8,
     name: 'Abdelaziz Ahmed',
     role: 'Chief Operations Officer',
     bio: 'Egypt',
@@ -93,7 +92,7 @@ const teamMembers = [
 // github: 'https://github.com/MohammedMashhour'
     }
    }, {
-    id: 8,
+    id: 9,
     name: 'Abdelrahman Atia',
     role: 'Tech Director',
     bio: 'Egypt',
@@ -102,7 +101,7 @@ const teamMembers = [
  
 // github: 'https://github.com/MohammedMashhour'
     }},{
-    id: 9,
+    id: 10,
     name: 'Mohamed Talaat',
     role: 'Web Developer',
     bio: 'Egypt',
