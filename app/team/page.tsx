@@ -64,7 +64,7 @@ const teamMembers = [
    {
          id: 6,
     name: 'Omar Emam',
-    role: 'Chief Operating Officer \n & \n Chief Product Officer',
+    role: 'Chief Operating Officer & Chief Product Officer',
     bio: 'Egypt',
     image: '/images/team/Omar Emam .jpg', // Local image path
     socialLinks: {
