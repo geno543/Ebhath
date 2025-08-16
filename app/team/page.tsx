@@ -65,7 +65,7 @@ const teamMembers = [
     name: 'Omar Emam',
     role: 'Chief Operating Officer', 'Chief Product Officer',
     bio: 'Egypt',
-    image: '/images/team/Omar Emam.jpg', // Local image path
+    image: '/images/team/Omar Emam .jpg', // Local image path
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/omar-emam-b71421306/',
     }
