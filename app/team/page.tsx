@@ -63,6 +63,7 @@ const teamMembers: TeamMember[] = [
     bio: 'Egypt',
     image: '/images/team/negm.png',
     socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/omar-negm-9b805726b/'
       // add links if needed
     }
   },
@@ -84,7 +85,7 @@ const teamMembers: TeamMember[] = [
     role: ['Chief Operating Officer', '&', 'Chief Product Officer'],
     bio: 'Egypt',
     // Avoid spaces in file paths if possible; rename file in your repo to match
-    image: '/images/team/omar-emam.jpg',
+    image: '/images/team/Omar Emam .jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/omar-emam-b71421306/',
     }
