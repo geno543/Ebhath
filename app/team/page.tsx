@@ -81,10 +81,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 6,
     name: 'Omar Emam',
-    // Multi-line titles as an array
-    role: ['Chief Operating Officer', '&', 'Chief Product Officer'],
+    role: 'Chief Operating & Product Officer',
     bio: 'Egypt',
-    // Avoid spaces in file paths if possible; rename file in your repo to match
     image: '/images/team/Omar Emam .jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/omar-emam-b71421306/',
