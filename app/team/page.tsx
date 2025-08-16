@@ -1,16 +1,33 @@
 'use client';
-
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaInstagram, FaFacebookF, FaTwitter, FaYoutube ,FaGithub} from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 
-const teamMembers = [
+type SocialLinks = {
+  linkedin?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  github?: string;
+};
+
+type TeamMember = {
+  id: number;
+  name: string;
+  role: string | string[]; // allow array for multi-line roles
+  bio: string;
+  image: string;
+  socialLinks: SocialLinks;
+};
+
+const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Mohammed Mashhour',
     role: 'Founder/Arabic course instructor.',
     bio: 'Egypt',
-    image: '/images/team/ebhathMohamed.png', // Local image path
+    image: '/images/team/ebhathMohamed.png',
     socialLinks: {
       youtube: 'https://youtube.com/@MohammedMashhour',
       instagram: 'https://instagram.com/m.mashhour',
@@ -22,7 +39,7 @@ const teamMembers = [
     name: 'Jake Yap',
     role: 'Filipino course instructor',
     bio: 'Philippines',
-    image: '/images/team/jake.png', // Local image path
+    image: '/images/team/jake.png',
     socialLinks: {
       linkedin: 'https://linkedin.com/in/jakeyap',
       facebook: 'https://facebook.com/jakeyap.teach'
@@ -33,7 +50,7 @@ const teamMembers = [
     name: 'Olive Stanley',
     role: 'Swahili course instructor',
     bio: 'Tanzania',
-    image: '/images/team/ebhatholive.png', // Local image path
+    image: '/images/team/ebhatholive.png',
     socialLinks: {
       twitter: 'https://twitter.com/olivestanley',
       instagram: 'https://instagram.com/olive.swahili'
@@ -44,74 +61,72 @@ const teamMembers = [
     name: 'Omar Negm',
     role: 'Chief media officer',
     bio: 'Egypt',
-    image: '/images/team/negm.png', // Local image path
+    image: '/images/team/negm.png',
     socialLinks: {
-      linkedin: 'https://www.linkedin.com/in/omar-negm-9b805726b/'
-      // twitter: 'https://twitter.com/olivestanley',
-      // instagram: 'https://instagram.com/olive.swahili'
+      // add links if needed
     }
-  },{
+  },
+  {
     id: 5,
     name: 'Mohamed Ramadan',
     role: 'Web Manager',
     bio: 'Egypt',
-    image: '/images/team/geno.png', // Local image path
+    image: '/images/team/geno.png',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/mohamed-ramadan-551a17272/',
       github: 'https://github.com/geno543'
     }
   },
-   {
-         id: 6,
+  {
+    id: 6,
     name: 'Omar Emam',
-    role: ['Chief Operating Officer', '&', 'Chief Product Officer ] ,
+    // Multi-line titles as an array
+    role: ['Chief Operating Officer', '&', 'Chief Product Officer'],
     bio: 'Egypt',
-    image: '/images/team/Omar Emam .jpg', // Local image path
+    // Avoid spaces in file paths if possible; rename file in your repo to match
+    image: '/images/team/omar-emam.jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/omar-emam-b71421306/',
     }
   },
-   {
+  {
     id: 7,
     name: 'Mohammed Dahman',
     role: 'Program Director',
     bio: 'Egypt',
-    image: '/images/team/dahman.jpeg', // Local image path
+    image: '/images/team/dahman.jpeg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/muhammed-dahman-34868927a/',
-      // github: 'https://github.com/MohammedMashhour'
     }
-  }, {
+  },
+  {
     id: 8,
     name: 'Abdelaziz Ahmed',
     role: 'Chief Operating Officer',
     bio: 'Egypt',
-    image: '/images/team/zizo.jpg', // Local image path
+    image: '/images/team/zizo.jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/abdelaziz-ahmed-830a692b3/',
       facebook: 'https://www.facebook.com/share/1AmxMPstVV/'
-// github: 'https://github.com/MohammedMashhour'
     }
-   }, {
+  },
+  {
     id: 9,
     name: 'Abdelrahman Atia',
     role: 'Tech Director',
     bio: 'Egypt',
-    image: '/images/team/Abdelrahman_Atia_Ebhath.jpg', // Local image path
-    socialLinks: {
- 
-// github: 'https://github.com/MohammedMashhour'
-    }},{
+    // Removed backslash escapes; ensure your file is named exactly like this
+    image: '/images/team/Abdelrahman_Atia_Ebhath.jpg',
+    socialLinks: {}
+  },
+  {
     id: 10,
     name: 'Mohamed Talaat',
     role: 'Web Developer',
     bio: 'Egypt',
-    image: '/images/team/Mohamed_Talaat_ebhath.jpg', // Local image path
-    socialLinks: {
-
-// github: 'https://github.com/MohammedMashhour'
-    }},
-  
+    image: '/images/team/Mohamed_Talaat_ebhath.jpg',
+    socialLinks: {}
+  },
 ];
 
 export default function TeamPage() {
@@ -174,7 +189,7 @@ export default function TeamPage() {
             >
               {/* Card Background Blur */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-              
+
               {/* Card Content */}
               <div className="relative bg-[#1E293B] rounded-2xl p-6 border border-blue-500/20 group-hover:border-blue-400 transition-all duration-300">
                 {/* Image */}
@@ -193,7 +208,17 @@ export default function TeamPage() {
                 {/* Info */}
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-blue-400 font-medium mb-4">{member.role}</p>
+
+                  {Array.isArray(member.role) ? (
+                    <div className="text-blue-400 font-medium mb-4 leading-snug">
+                      {member.role.map((line, idx) => (
+                        <div key={idx}>{line}</div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-blue-400 font-medium mb-4">{member.role}</p>
+                  )}
+
                   <p className="text-gray-400 text-sm">{member.bio}</p>
                 </div>
 
@@ -248,7 +273,8 @@ export default function TeamPage() {
                     >
                       <FaYoutube className="w-5 h-5" />
                     </a>
-                  )} {member.socialLinks.github && (
+                  )}
+                  {member.socialLinks.github && (
                     <a
                       href={member.socialLinks.github}
                       target="_blank"
