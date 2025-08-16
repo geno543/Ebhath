@@ -46,6 +46,7 @@ const teamMembers = [
     bio: 'Egypt',
     image: '/images/team/negm.png', // Local image path
     socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/omar-negm-9b805726b/'
       // twitter: 'https://twitter.com/olivestanley',
       // instagram: 'https://instagram.com/olive.swahili'
     }
