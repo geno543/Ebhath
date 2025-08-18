@@ -172,7 +172,7 @@ export default function Home() {
                   Do Research
                 </p>
                 <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Breaking language barriers in scientific education. Empowering underrepresented communities with research resources in their native languages.
+                  Breaking language barriers in scientific education. Making scientific research education accessible across underrepresented communities with research resources in their native languages.
                 </p>
               </motion.div>
 
