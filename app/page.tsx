@@ -65,7 +65,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a365d2e_1px,transparent_1px),linear-gradient(to_bottom,#1a365d2e_1px,transparent_1px)] bg-[size:24px_24px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#2563eb1a_1px,transparent_1px),linear-gradient(to_bottom,#2563eb1a_1px,transparent_1px)] bg-[size:96px_96px]" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#020B1C]/90 via-[#041536]/60 to-[#061F4E]/70" />
-
+          
           {/* Animated gradient orbs */}
           <motion.div
             className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
@@ -155,14 +155,9 @@ export default function Home() {
                   Do Research
                 </p>
 
-                {/* Your paragraph with a visual line/space between sentences */}
-                <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Breaking language barriers in scientific education.
-                  {/* Small vertical space on all screens */}
-                  <span className="block h-1" />
-                  {/* A true line break on medium+ screens (optional) */}
-                  <br className="hidden md:inline" />
-                  Making scientific research education accessible across underrepresented communities with research resources in their native languages.
+                {/* Normal spacing paragraph */}
+                <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-normal">
+                  Breaking language barriers in scientific education. Making scientific research education accessible across underrepresented communities with research resources in their native languages.
                 </p>
               </motion.div>
 
@@ -253,18 +248,21 @@ export default function Home() {
                   animate={{ rotate: [0, 360], scale: [1, 1.1, 1] }}
                   transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                 />
-
+                
                 {/* Floating particles */}
                 {[...Array(6)].map((_, i) => (
                   <motion.div
                     key={i}
                     className="absolute w-2 h-2 bg-blue-400/40 rounded-full"
-                    style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                    }}
                     animate={{ y: [-20, 20, -20], opacity: [0.2, 0.8, 0.2], scale: [0.5, 1, 0.5] }}
                     transition={{ duration: Math.random() * 4 + 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
                   />
                 ))}
-
+                
                 {/* Main image container */}
                 <motion.div
                   className="relative z-10 transform group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -280,6 +278,7 @@ export default function Home() {
                       className="object-contain w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
                       priority
                     />
+                    
                     {/* Shine effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
@@ -289,7 +288,7 @@ export default function Home() {
                     />
                   </div>
                 </motion.div>
-
+                
                 {/* Decorative corner elements */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 border-t-2 border-r-2 border-blue-400/50 rounded-tr-lg"></div>
                 <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b-2 border-l-2 border-purple-400/50 rounded-bl-lg"></div>
@@ -299,7 +298,7 @@ export default function Home() {
         </div>
 
         {/* Enhanced Scroll Indicator */}
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -319,7 +318,7 @@ export default function Home() {
             className="relative group cursor-pointer"
           >
             <div className="w-8 h-14 rounded-full border-2 border-white/20 group-hover:border-blue-400/50 flex items-start justify-center p-2 transition-colors duration-300 backdrop-blur-sm">
-              <motion.div
+              <motion.div 
                 className="w-2 h-2 rounded-full bg-white/40 group-hover:bg-blue-400/70 transition-colors duration-300"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
@@ -337,7 +336,7 @@ export default function Home() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
         </div>
-
+        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header */}
           <motion.div
@@ -354,7 +353,7 @@ export default function Home() {
               Transforming research education across languages and cultures worldwide
             </p>
           </motion.div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
               { number: 3, label: 'Courses Available', icon: '📚', suffix: '', description: 'Comprehensive research programs' },
@@ -370,16 +369,16 @@ export default function Home() {
                 className="relative group"
               >
                 {/* Animated background glow */}
-                <motion.div
+                <motion.div 
                   className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"
                   animate={{ scale: [1, 1.05, 1], rotate: [0, 1, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 />
-
+                
                 {/* Main card */}
                 <div className="relative bg-gradient-to-br from-[#0B1221]/80 to-[#162544]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 hover:border-blue-400/30 transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:-translate-y-2">
                   {/* Icon */}
-                  <motion.div
+                  <motion.div 
                     className="text-center mb-6"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -388,7 +387,7 @@ export default function Home() {
                       {stat.icon}
                     </span>
                   </motion.div>
-
+                  
                   {/* Number */}
                   <div className="text-center mb-4">
                     <div className="relative inline-block">
@@ -396,14 +395,14 @@ export default function Home() {
                         <CountUp end={stat.number} duration={3} enableScrollSpy scrollSpyOnce />
                         {stat.suffix}
                       </div>
-                      <motion.div
+                      <motion.div 
                         className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                       />
                     </div>
                   </div>
-
+                  
                   {/* Label and description */}
                   <div className="text-center space-y-2">
                     <h3 className="text-xl lg:text-2xl font-semibold text-white group-hover:text-blue-300 transition-colors duration-300">
@@ -413,7 +412,7 @@ export default function Home() {
                       {stat.description}
                     </p>
                   </div>
-
+                  
                   {/* Decorative corner */}
                   <div className="absolute top-4 right-4 w-3 h-3 border-t-2 border-r-2 border-blue-400/30 group-hover:border-blue-400/60 transition-colors duration-300"></div>
                   <div className="absolute bottom-4 left-4 w-3 h-3 border-b-2 border-l-2 border-purple-400/30 group-hover:border-purple-400/60 transition-colors duration-300"></div>
@@ -512,7 +511,7 @@ export default function Home() {
               className="space-y-6"
             >
               <div className="inline-block">
-                <motion.h2
+                <motion.h2 
                   className="text-3xl md:text-4xl font-bold text-white mb-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -523,8 +522,8 @@ export default function Home() {
                 </motion.h2>
                 <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
               </div>
-
-              <motion.p
+              
+              <motion.p 
                 className="text-lg text-gray-300 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -533,55 +532,21 @@ export default function Home() {
               >
                 Ebhath is a fiscally sponsored official 501(c)3 nonprofit dedicated to closing the educational gap in scientific research resources by offering courses in underrepresented languages for underrepresented minorities. In 2023, Ebhath began working to bridge this gap in the Arabic language, and we are currently expanding our efforts to include Filipino and Swahili. We are currently recruiting mentors to develop courses in Portuguese and Indian languages, although translation and recording in these languages have not yet commenced.
               </motion.p>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <a
-                  href="/about"
+                <a 
+                  href="/about" 
                   className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 group"
                 >
                   <span>Learn More</span>
-                  <svg
-                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <svg 
+                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              </motion.div>
-
-              {/* Stats or Additional Info */}
-              <motion.div
-                className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-gray-700"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">Our Mission</h4>
-                  <p className="text-gray-400">Making scientific research education accessible across languages.</p>
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">Our Vision</h4>
-                  <p className="text-gray-400">A world where language is no longer a barrier to scientific knowledge.</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Image */}
-            <div className="lg:col-span-1">
-              <ImageCard />
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-    </main>
-  );
-}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5
