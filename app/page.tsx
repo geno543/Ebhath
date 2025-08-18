@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '../components/AnimatedSection';
@@ -10,6 +11,7 @@ import { useState } from 'react';
 // Separate ImageCard component without file upload functionality
 function ImageCard() {
   const imageSrc = '/images/WhatsApp Image 2025-04-11 at 15.19.08_cbd134e0.jpg';
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -69,13 +71,28 @@ export default function Home() {
           {/* Animated gradient orbs */}
           <motion.div
             className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
-            animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.7, 0.4] }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.4, 0.7, 0.4],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
           />
         </div>
 
@@ -95,7 +112,7 @@ export default function Home() {
               transition={{
                 duration: Math.random() * 15 + 20,
                 repeat: Infinity,
-                ease: 'easeInOut',
+                ease: "easeInOut",
                 delay: i * 2,
               }}
               style={{
@@ -154,9 +171,7 @@ export default function Home() {
                 <p className="text-2xl md:text-3xl font-semibold text-blue-200">
                   Do Research
                 </p>
-
-                {/* Normal spacing paragraph */}
-                <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-normal">
+                <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   Breaking language barriers in scientific education. Making scientific research education accessible across underrepresented communities with research resources in their native languages.
                 </p>
               </motion.div>
@@ -190,7 +205,9 @@ export default function Home() {
                   className="group relative inline-flex items-center px-10 py-5 rounded-2xl text-lg font-bold bg-white/5 text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/20 transform hover:scale-105"
                 >
                   <span className="relative z-10">Explore Programs</span>
-                  <span className="relative z-10 ml-3 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                  <span className="relative z-10 ml-3 group-hover:translate-x-2 transition-transform duration-300">
+                    →
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               </motion.div>
@@ -234,19 +251,26 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Enhanced Visual Element */}
+     {/* Enhanced Visual Element */}
             <motion.div
               initial={{ opacity: 0, x: 20, scale: 0.8 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
               className="relative hidden lg:block"
             >
               <div className="relative group">
                 {/* Animated background elements */}
                 <motion.div
                   className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl"
-                  animate={{ rotate: [0, 360], scale: [1, 1.1, 1] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                  animate={{
+                    rotate: [0, 360],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                 />
                 
                 {/* Floating particles */}
@@ -258,8 +282,17 @@ export default function Home() {
                       left: `${Math.random() * 100}%`,
                       top: `${Math.random() * 100}%`,
                     }}
-                    animate={{ y: [-20, 20, -20], opacity: [0.2, 0.8, 0.2], scale: [0.5, 1, 0.5] }}
-                    transition={{ duration: Math.random() * 4 + 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
+                    animate={{
+                      y: [-20, 20, -20],
+                      opacity: [0.2, 0.8, 0.2],
+                      scale: [0.5, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: Math.random() * 4 + 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.5,
+                    }}
                   />
                 ))}
                 
@@ -267,7 +300,7 @@ export default function Home() {
                 <motion.div
                   className="relative z-10 transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   whileHover={{ rotateY: 5, rotateX: 5 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                   <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm border border-white/10 p-8">
                     <Image
@@ -282,9 +315,14 @@ export default function Home() {
                     {/* Shine effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-                      initial={{ x: '-100%' }}
-                      animate={{ x: '200%' }}
-                      transition={{ duration: 3, repeat: Infinity, repeatDelay: 5, ease: 'easeInOut' }}
+                      initial={{ x: "-100%" }}
+                      animate={{ x: "200%" }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatDelay: 5,
+                        ease: "easeInOut",
+                      }}
                     />
                   </div>
                 </motion.div>
@@ -314,14 +352,14 @@ export default function Home() {
           </motion.p>
           <motion.div
             animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="relative group cursor-pointer"
           >
             <div className="w-8 h-14 rounded-full border-2 border-white/20 group-hover:border-blue-400/50 flex items-start justify-center p-2 transition-colors duration-300 backdrop-blur-sm">
               <motion.div 
                 className="w-2 h-2 rounded-full bg-white/40 group-hover:bg-blue-400/70 transition-colors duration-300"
                 animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-purple-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
@@ -356,23 +394,30 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
-              { number: 3, label: 'Courses Available', icon: '📚', suffix: '', description: 'Comprehensive research programs' },
-              { number: 1400, label: 'Enrolled Students', icon: '🎓', suffix: '+', description: 'Global learners empowered' },
-              { number: 6, label: 'Team Members', icon: '👥', suffix: '', description: 'Dedicated professionals' }
+              { number: 3, label: "Courses Available", icon: "📚", suffix: "", description: "Comprehensive research programs" },
+              { number: 1400, label: "Enrolled Students", icon: "🎓", suffix: "+", description: "Global learners empowered" },
+              { number: 6, label: "Team Members", icon: "👥", suffix: "", description: "Dedicated professionals" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: index * 0.2, duration: 0.8, ease: 'easeOut' }}
+                transition={{ delay: index * 0.2, duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
                 className="relative group"
               >
                 {/* Animated background glow */}
                 <motion.div 
                   className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"
-                  animate={{ scale: [1, 1.05, 1], rotate: [0, 1, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={{
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
                 
                 {/* Main card */}
@@ -381,7 +426,7 @@ export default function Home() {
                   <motion.div 
                     className="text-center mb-6"
                     whileHover={{ scale: 1.2, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     <span className="inline-block text-6xl lg:text-7xl mb-2 filter drop-shadow-lg">
                       {stat.icon}
@@ -392,13 +437,24 @@ export default function Home() {
                   <div className="text-center mb-4">
                     <div className="relative inline-block">
                       <div className="text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
-                        <CountUp end={stat.number} duration={3} enableScrollSpy scrollSpyOnce />
+                        <CountUp
+                          end={stat.number}
+                          duration={3}
+                          enableScrollSpy
+                          scrollSpyOnce
+                        />
                         {stat.suffix}
                       </div>
                       <motion.div 
                         className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                        animate={{
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                       />
                     </div>
                   </div>
@@ -438,6 +494,7 @@ export default function Home() {
               Our research publications and academic contributions to the scientific community.
             </p>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -471,6 +528,7 @@ export default function Home() {
               Meet our dedicated scholars who are advancing research in their respective fields.
             </p>
           </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -491,12 +549,97 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            {/* Showcase placeholder kept commented
-            <motion.div ...> ... </motion.div>
-            */}
+
+            {/* <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">Scholar Showcase</h3>
+                <div className="aspect-w-16 aspect-h-12 rounded-lg overflow-hidden bg-gray-700/50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">🎓</div>
+                    <p className="text-gray-400">Scholar photos coming soon</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div> */}
           </div>
         </div>
       </AnimatedSection>
+
+      {/* Hidden Application Section - Keep for future use */}
+      {/* 
+      <AnimatedSection className="py-24 bg-gradient-to-b from-gray-800 to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Research Program</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Join our global community of researchers and unlock your potential with our comprehensive research education platform.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: "👨‍🎓",
+                title: "Apply as a Member",
+                description: "Join our program to learn research methodology in your native language",
+                gradient: "from-blue-500/20 to-blue-400/20",
+                href: "/apply?type=member",
+                cta: "Apply Now"
+              },
+              {
+                icon: "👨‍🏫",
+                title: "Apply as a Mentor",
+                description: "Share your expertise and help bridge the language gap in research education",
+                gradient: "from-purple-500/20 to-purple-400/20",
+                href: "/apply?type=mentor",
+                cta: "Join as Mentor"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300`} />
+                <Link href={feature.href} className="block h-full">
+                  <div className="relative h-full bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-blue-500/20 transition-all duration-300">
+                    <div className="space-y-4">
+                      <span className="inline-block text-4xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                        {feature.icon}
+                      </span>
+                      <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed">
+                        {feature.description}
+                      </p>
+                      <button className="mt-6 w-full px-6 py-3 bg-blue-500/20 text-blue-300 rounded-lg font-medium hover:bg-blue-500/30 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                        {feature.cta}
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+      */}
 
       {/* About Us Section */}
       <AnimatedSection className="py-24 bg-gradient-to-br from-[#0B1221] to-[#162544]">
@@ -532,6 +675,7 @@ export default function Home() {
               >
                 Ebhath is a fiscally sponsored official 501(c)3 nonprofit dedicated to closing the educational gap in scientific research resources by offering courses in underrepresented languages for underrepresented minorities. In 2023, Ebhath began working to bridge this gap in the Arabic language, and we are currently expanding our efforts to include Filipino and Swahili. We are currently recruiting mentors to develop courses in Portuguese and Indian languages, although translation and recording in these languages have not yet commenced.
               </motion.p>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -549,4 +693,37 @@ export default function Home() {
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+              </motion.div>
+
+              {/* Stats or Additional Info */}
+              <motion.div 
+                className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-gray-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-2">Our Mission</h4>
+                  <p className="text-gray-400">Making scientific research education accessible across languages.</p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-2">Our Vision</h4>
+                  <p className="text-gray-400">A world where language is no longer a barrier to scientific knowledge.</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Image */}
+            <div className="lg:col-span-1">
+              <ImageCard />
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    </main>
+  );
+}
