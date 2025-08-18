@@ -159,7 +159,7 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   Breaking language barriers in scientific education.
                   {/* Small vertical space on all screens */}
-                  <span className="block h-3" />
+                  <span className="block h-1" />
                   {/* A true line break on medium+ screens (optional) */}
                   <br className="hidden md:inline" />
                   Making scientific research education accessible across underrepresented communities with research resources in their native languages.
