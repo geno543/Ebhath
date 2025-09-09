@@ -70,7 +70,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 5,
     name: 'Mohamed Ramadan',
-    role: 'Web Manager',
+    role: 'Chief Technology Officer & Web Manager',
     bio: 'Egypt',
     image: '/images/team/geno.png',
     socialLinks: {
