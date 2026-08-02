@@ -81,7 +81,7 @@ export default function Home() {
       {/* Numbers */}
       <section className="border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="text-sm text-gray-500">{stat.label}</dt>
