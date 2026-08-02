@@ -7,11 +7,15 @@ import Footer from '../components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ebhath - Scientific Research Education',
-  description: 'Ebhath is a nonprofit dedicated to closing the educational gap in scientific research resources by offering courses in underrepresented languages.',
+  title: {
+    default: 'Ebhath — Scientific research education in under-served languages',
+    template: '%s',
+  },
+  description:
+    'Ebhath is a 501(c)(3) nonprofit teaching scientific research methodology in Arabic, Filipino and Swahili. Applications for the Foundations Program are open.',
   icons: {
-    icon: '/img/Ebhath_logo/Ebhath_Official_Logo-08.png'
-  }
+    icon: '/images/Ebhath_Official_Logo-08.png',
+  },
 }
 
 export default function RootLayout({
@@ -21,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#0A1120]`}>
         <Navbar />
         <div className="min-h-screen pt-16">
           {children}

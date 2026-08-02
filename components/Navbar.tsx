@@ -4,8 +4,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { DONATE_URL, FOUNDATION_PROGRAM_FORM } from '../lib/links';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/research-programs', label: 'Programs' },
+  { href: '/courses', label: 'Courses' },
+  { href: '/team', label: 'Team' },
+  { href: '/contact', label: 'Contact' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,133 +22,133 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      setScrolled(isScrolled);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/courses', label: 'Courses' },
-    { href: '/team', label: 'Team' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/research-programs', label: 'Research Programs' },
-  ];
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 border-b transition-colors duration-200 ${
         scrolled
-          ? 'bg-gray-900/90 backdrop-blur-lg shadow-lg'
-          : 'bg-gray-900/50 backdrop-blur-sm'
+          ? 'bg-[#0A1120]/95 border-white/10 backdrop-blur'
+          : 'bg-[#0A1120]/70 border-transparent backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="hover:opacity-80 transition-opacity"
-          >
+          <Link href="/" className="shrink-0">
             <Image
               src="/images/Ebhath_logo_herosection.png"
-              alt="Ebhath Logo"
+              alt="Ebhath"
               width={160}
               height={60}
-              className="h-10 w-auto"
+              className="h-9 w-auto"
+              priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative group ${
-                  pathname === link.href
-                    ? 'text-blue-400'
-                    : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                {link.label}
-                {pathname === link.href && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400 rounded-full"
-                    transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <div className="absolute inset-0 rounded-lg bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-            ))}
-            <a
-              href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4 px-6 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25 hover:shadow-blue-600/25"
-            >
-              Donation
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            {isOpen ? (
-              <FiX className="h-6 w-6" />
-            ) : (
-              <FiMenu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-white/10"
-          >
-            <div className="px-4 py-3 space-y-1">
-              {navLinks.map((link) => (
+          {/* Desktop navigation */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-base font-medium transition-colors ${
-                    pathname === link.href
-                      ? 'bg-blue-500/20 text-blue-400'
-                      : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                  aria-current={active ? 'page' : undefined}
+                  className={`px-3 py-2 text-sm transition-colors ${
+                    active ? 'text-white' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {link.label}
+                  <span
+                    className={`block h-px mt-1 transition-colors ${
+                      active ? 'bg-blue-500' : 'bg-transparent'
+                    }`}
+                  />
                 </Link>
-              ))}
+              );
+            })}
+
+            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-white/10">
               <a
-                href="https://www.paypal.com/donate/?hosted_button_id=M3V67TGZLAMDE"
+                href={FOUNDATION_PROGRAM_FORM}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 mt-4 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors text-center shadow-lg shadow-blue-500/25"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-colors"
+              >
+                Apply Now
+              </a>
+              <a
+                href={DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 text-sm font-medium text-gray-200 border border-white/15 rounded-md hover:bg-white/5 hover:text-white transition-colors"
               >
                 Donation
               </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            className="lg:hidden p-2 -mr-2 text-gray-300 hover:text-white transition-colors"
+          >
+            {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile navigation */}
+      {isOpen && (
+        <div className="lg:hidden bg-[#0A1120] border-t border-white/10">
+          <div className="px-4 py-3 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 rounded-md text-base transition-colors ${
+                  pathname === link.href
+                    ? 'text-white bg-white/5'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-3 mt-2 border-t border-white/10 space-y-2">
+              <a
+                href={FOUNDATION_PROGRAM_FORM}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2.5 text-center text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-colors"
+              >
+                Apply Now
+              </a>
+              <a
+                href={DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2.5 text-center text-sm font-medium text-gray-200 border border-white/15 rounded-md hover:bg-white/5 transition-colors"
+              >
+                Donation
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
